@@ -15,7 +15,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/common/Paginator" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -27,11 +27,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\react project\my-react\src\components\common\Paginator" />
       <recent name="C:\react project\my-react\src\components\Profile\ProfileInfo" />
       <recent name="C:\react project\my-react\src\Redux" />
       <recent name="C:\react project\my-react\src\components\common\FormsControls" />
       <recent name="C:\react project\my-react\src\components\hoc" />
-      <recent name="C:\react project\my-react\src\components\Login" />
     </key>
   </component>
   <component name="RunManager" selected="Jest.ProfileStatus component.after creation span should be displayed with status">
@@ -137,7 +137,7 @@
       <workItem from="1614941349730" duration="1956000" />
       <workItem from="1615198464060" duration="1190000" />
       <workItem from="1615299599351" duration="15218000" />
-      <workItem from="1616082778684" duration="10441000" />
+      <workItem from="1616082778684" duration="12375000" />
     </task>
     <servers />
   </component>
