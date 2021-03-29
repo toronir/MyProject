@@ -13,13 +13,21 @@ import {initializeApp} from "./Redux/App-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
 import store from "./Redux/Redux-store";
 import {Provider} from "react-redux";
+import {Redirect, Switch} from "react-router";
 
 const DialogsContainer = React.lazy(() => import ('./components/Dialogs/DialogsContainer'));
 
 
 class App extends React.Component {
+    catchAllUnhandledErrors = (reason,promise) =>{
+        alert("Some error occurred")
+    }
     componentDidMount() {
         this.props.initializeApp();
+        window.addEventListener("unhandledrejection", this.catchAllUnhandledErrors)
+    }
+    componentWillUnmount() {
+        window.removeEventListener("unhandledrejection", this.catchAllUnhandledErrors)
     }
 
     render() {
@@ -32,14 +40,17 @@ class App extends React.Component {
                 <HeaderContainer/>
                 <Navbar/>
                 <div className="app-wraper-content">
-                    <Route path="/dialogs" render={() => {
-                        return <React.Suspense fallback={<div>Loading...</div>}>
-                            <DialogsContainer/>
-                        </React.Suspense>
-                    }}/>
-                    <Route path="/profile/:userId?" render={() => <ProfileContainer/>}/>
-                    <Route path="/users" render={() => <UsersContainer/>}/>
-                    <Route path="/login" render={() => <Login/>}/>
+                    <Switch>
+                        <Route exact path="/" render={() => <Redirect to={"/profile"}/>}/>
+                        <Route path="/dialogs" render={() => {
+                            return <React.Suspense fallback={<div>Loading...</div>}>
+                                <DialogsContainer/>
+                            </React.Suspense>
+                        }}/>
+                        <Route path="/profile/:userId?" render={() => <ProfileContainer/>}/>
+                        <Route path="/users" render={() => <UsersContainer/>}/>
+                        <Route path="/login" render={() => <Login/>}/>
+                    </Switch>
                 </div>
             </div>
 
