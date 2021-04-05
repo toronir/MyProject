@@ -19,7 +19,7 @@ let dialogsReducer = (state = initialState, action) => {
   switch (action.type) {
     case DELETE_MESSAGE:
       return {
-        ...state, messages: state.messages.filter(p => p.id != action.messageId)
+        ...state, messages: state.messages.filter(p => p.id !== action.messageId)
       };
     case SEND_MESSAGE:
       let text = action.newMessageText;

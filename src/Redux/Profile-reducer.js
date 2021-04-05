@@ -39,7 +39,7 @@ let profileReducer = (state = initialState, action) => {
             return {...state, status: action.status};
         }
         case DELETE_POST: {
-            return {...state, post: state.posts.filter(p => p.id != action.postId)}
+            return {...state, post: state.posts.filter(p => p.id !== action.postId)}
         }
         case RESET_PROFILE: {
             return {...state, profile: null}
@@ -81,7 +81,7 @@ export const savePhotoSuccess = (photos) => {
         type: SAVE_PHOTO_SUCCESS, photos
     };
 };
-export const getUserProfile = (userId) => async (dispatch) => {
+export const getUserProfile = (userId) => async (dispatch) => {debugger
     let response = await userAPI.getProfile(userId)
     dispatch(setUserProfile(response.data));
 }

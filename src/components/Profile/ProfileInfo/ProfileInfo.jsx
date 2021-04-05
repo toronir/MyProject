@@ -13,11 +13,11 @@ const ProfileInfo = ({profile, status, savePhoto, updateStatus, isOwner, savePro
     const Contact = ({contactTitle, contactValue}) => {
         return <div className={styles.contact}><b>{contactTitle}</b>: {contactValue}</div>
     }
-    const OnMainPhotoSelected = (e) => {
+/*    const OnMainPhotoSelected = (e) => {
         if (e.target.files.length) {
             savePhoto(e.target.files[0]);
         }
-    }
+    }*/
     const ProfileData = ({profile, isOwner, goToEditMode}) => {
         debugger
         return <div>
