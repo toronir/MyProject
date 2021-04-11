@@ -3,6 +3,7 @@ import Preloader from "../../common/Preloader/Preloader";
 import styles from "./ProfileInfo.module.css";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 import ProfileDataForm from "./ProfileDataForm";
+import {Button} from "antd";
 
 const ProfileInfo = ({profile, status, savePhoto, updateStatus, isOwner, saveProfile}) => {
 
@@ -22,7 +23,7 @@ const ProfileInfo = ({profile, status, savePhoto, updateStatus, isOwner, savePro
         debugger
         return <div>
             {isOwner && <div>
-                <button onClick={goToEditMode}>edit</button>
+                <Button onClick={goToEditMode} type="primary" tyle={{marginRight: "10px"}}style={{marginRight: "10px"}}>edit</Button>
             </div>}
             <div>
                 <b>UserName</b>: {profile.fullName}

@@ -1,8 +1,14 @@
 import React from "react";
 import styles from "./FormsControl.module.css";
 import {Field} from "redux-form";
+import {makeField} from "../AntD/MakeField";
+import {Button, Checkbox, Form,Input } from "antd";
 
-export const FormControl = ({input, meta, child, ...props}) => {
+
+
+//const AInput = makeField(Input);
+
+/*export const FormControl = ({input, meta, child, ...props}) => {
 
     let hasError = meta.touched && meta.error;
     return (
@@ -14,14 +20,14 @@ export const FormControl = ({input, meta, child, ...props}) => {
         </div>
     )
 }
-export const Textarea = (props) => {
+export const FormTextarea = (props) => {
     const {input, meta, child, ...restProps} = props;
     return <FormControl{...props}> <textarea {...input} {...restProps}/> </FormControl>
 }
-export const Input = (props) => {
+export const FormInput = (props) => {
     const {input, meta, child, ...restProps} = props;
-    return <FormControl{...props}> <input {...input} {...restProps}/></FormControl>
-}
+    return <FormControl{...props}> <AInput {...input} {...restProps}/></FormControl>
+}*/
 export const createField = (placeholder, name, validators, component,props = {}, text) => (
     <div>
     <Field placeholder={placeholder}

@@ -2,9 +2,16 @@ import React from "react";
 import dialogs from "./Dialogs.module.css";
 import DialogItem from "./DialogItem/DialogItem";
 import Message from "./Message/Message";
-import {Textarea} from "../common/FormsControls/FormsControl";
+
 import {maxLengthCreator, required} from "../utilits/validators/validators";
 import {Field, reduxForm} from "redux-form";
+import {makeField} from "../common/AntD/MakeField";
+import {Input} from "antd";
+const { TextArea } = Input;
+
+const FormInput = makeField(Input);
+const FormTextarea = makeField(TextArea)
+
 const MaxLength100 = maxLengthCreator(100)
 const Dialogs = (props) => {
     let addNewMassage = (values) =>{
@@ -34,7 +41,7 @@ const AddMassageForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
             <div>
-                <Field component={Textarea} name="newMessageText" placeholder="Enter your massage" validate={[required,MaxLength100]}/>
+                <Field component={FormTextarea} name="newMessageText" placeholder="Enter your massage" validate={[required,MaxLength100]}/>
             </div>
             <div>
               <button>Send</button>
